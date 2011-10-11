@@ -1,1 +1,26 @@
-THIS IS ONLY AN HELLO WORLD NGINX MODULE
+This project is an hello world nginx filter. This project only write different lines into error log of your nginx installation.
+
+Compile
+-------
+
+When you configure nginx remember to add this component.
+
+./configure --add-module=../nginx-corley-filter
+
+Enable this filter
+------------------
+
+This filter is engaged by put into the configuration few parameters.
+
+server {
+    corley on;
+    corley_keyid "example key id";
+    corley_key "my key";
+    corley_queue "the queue name";
+
+    #Other nginx configurations
+}
+
+The hello world filter works in different nginx configurations, as http conf, vhost conf, single path configuration. 
+
+You can put the base configuration into different nginx section and check.
